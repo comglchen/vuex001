@@ -11,6 +11,7 @@
     <button @click="decrement(n)">-</button>
     <button @click="incrementOdd(n)">和为奇数时加</button>
     <button @click="incrementWait(n)">等一等再加</button>
+    <h2>student组件中添加的学生人数为：{{ studentList.length }}</h2>
   </div>
 </template>
 
@@ -26,7 +27,7 @@ export default {
   },
   computed: {
     //对象写法：
-    ...mapState({ sum: "sum" }),
+    ...mapState({ sum: "sum", studentList: "studentList" }),
     //数组写法：
     // ...mapState(["sum"]),
   },

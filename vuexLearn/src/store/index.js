@@ -31,13 +31,20 @@ const mutations = {
     JIAWAIT(state, value) {
         state.sum += value
     },
+    ADDStudent(state, value) {
+        state.studentList.unshift(value)
+    }
 }
 const getters = {
     bigsum(state) {
         return state.sum * 10
     }
 }
-const state = { sum: 0 }
+const state = {
+    sum: 0,
+    studentList: [{ id: "001", name: '张三' }, { id: "002", name: '李四' }
+    ]
+}
 export default new Vuex.Store({
     actions,
     mutations,

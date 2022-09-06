@@ -1,19 +1,19 @@
+
 <template>
-  <div class="appdiv"><VueXTest></VueXTest></div>
+  <div>
+    <VueXTest></VueXTest>
+    <hr />
+    <Student></Student>
+  </div>
 </template>
-
-
- 
 
 <script>
 import VueXTest from "./components/VueXTest";
-
+import Student from "./components/Student";
 export default {
   components: {
     VueXTest,
-  },
-  mounted() {
-    console.log("App", this);
+    Student,
   },
 };
 </script>
