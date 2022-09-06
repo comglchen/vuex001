@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>当前计算结果为：{{ sum }}</h1>
-    <h2>sum放大十倍：{{ bigsum }}</h2>
+    <h2>sum放大十倍：{{ $store.getters.bigsum }}</h2>
     <select v-model.number="n">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -19,7 +19,6 @@
 import { mapState } from "vuex";
 import { mapMutations } from "vuex";
 import { mapActions } from "vuex";
-import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -28,9 +27,7 @@ export default {
   },
   computed: {
     //对象写法：
-    ...mapState("a", { sum: "sum" }),
-    ...mapState("b", { studentList: "studentList" }),
-    ...mapGetters("a", ["bigsum"]),
+    ...mapState({ sum: "sum", studentList: "studentList" }),
     //数组写法：
     // ...mapState(["sum"]),
   },
@@ -41,7 +38,7 @@ export default {
     // decrement() {
     //   this.$store.commit("JIAN", this.n);
     // },
-    ...mapMutations("a", { increment: "JIA", decrement: "JIAN" }),
+    ...mapMutations({ increment: "JIA", decrement: "JIAN" }),
     // increment() {
     //   this.$store.dispatch("jia", this.n);
     // },
@@ -56,10 +53,7 @@ export default {
     // incrementWait() {
     //   this.$store.dispatch("jiaWait", this.n);
     // },
-    ...mapActions("a", {
-      incrementOdd: "jiaOdd",
-      incrementWait: "jiaWait",
-    }),
+    ...mapActions({ incrementOdd: "jiaOdd", incrementWait: "jiaWait" }),
   },
 };
 </script>

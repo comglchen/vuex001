@@ -5,9 +5,7 @@
     <input v-model="name" type="text" /><button @click="addStudent">
       添加
     </button>
-    <li v-for="s in $store.state.b.studentList" :key="s.id">
-      {{ s.name }}
-    </li>
+    <li v-for="s in $store.state.studentList" :key="s.id">{{ s.name }}</li>
   </div>
 </template>
 
@@ -23,16 +21,15 @@ export default {
     addStudent() {
       const studentObj = { id: nanoid(), name: this.name };
       // this.$store.state.studentList.unshift(studentObj);
-      this.$store.commit("b/ADDStudent", studentObj);
+      this.$store.commit("ADDStudent", studentObj);
       this.name = "";
     },
   },
   computed: {
     sum() {
-      return this.$store.state.a.sum;
+      return this.$store.state.sum;
     },
   },
-  mounted() {},
 };
 </script>
 
