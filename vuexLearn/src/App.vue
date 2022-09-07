@@ -1,21 +1,15 @@
-
 <template>
   <div>
-    <VueXTest></VueXTest>
-    <hr />
-    <Student></Student>
+    <router-link to="/about">toabout</router-link>
+    <router-link to="/home">tohome</router-link>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import VueXTest from "./components/VueXTest";
-import Student from "./components/Student";
-export default {
-  components: {
-    VueXTest,
-    Student,
-  },
-};
+export default {};
 </script>
 
 <style>

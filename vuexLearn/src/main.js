@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-//import Vuex from 'vuex'
-import store from './store'
-//Vue.use(Vuex)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+import router from './router'
+
 Vue.config.productionTip = false
 
 const vm = new Vue({
   render: h => h(App),
-  store,
-  beforeCreate() {
-    Vue.prototype.$bus = this
-  }
+  router: router
 }).$mount('#app')
-console.log(vm)
