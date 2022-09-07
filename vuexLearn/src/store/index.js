@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
+import axios from 'axios'
+import { nanoid } from 'nanoid'
 Vue.use(Vuex)
 const countOptions = {
     namespaced: true,
@@ -44,7 +46,16 @@ const studentOptions = {
         ]
     },
     actions: {
-
+        addStudentChen(context, value) {
+            if (value.name.indexOf('陈') === 0) {
+                context.commit('ADDStudent', value)
+            } else { alert("要添加的学生必须姓陈") }
+        },
+        addStudentServe(context) {
+            axios.get('https://api.uixsj.cn/hitokoto/get?type=social').then(rep => {
+                context.commit('ADDStudent', { id: nanoid(), name: rep.data })
+            })
+        }
     },
     mutations: {
         ADDStudent(state, value) {
