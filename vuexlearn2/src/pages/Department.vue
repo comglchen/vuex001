@@ -17,7 +17,7 @@ export default {
     return {
       depList: [
         { id: "001", dep: "人事部", job: "管理人事工作" },
-        { id: "002", dep: "财务部", job: "管理财务工作" }, // detList: [
+        { id: "002", dep: "财务部", job: "管理财务工作" },
         { id: "003", dep: "法务部", job: "管理法务工作" },
       ],
     };
