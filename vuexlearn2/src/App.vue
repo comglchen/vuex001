@@ -3,7 +3,11 @@
     <h1>这是App首页</h1>
 
     <el-container>
-      <el-header>Header</el-header>
+      <el-header
+        >Header
+        <button @click="back">后退</button>
+        <button @click="forward">前进</button>
+      </el-header>
       <el-container>
         <el-aside width="200px">
           <el-menu>
@@ -14,11 +18,7 @@
             </el-menu-item>
 
             <el-menu-item>
-              <router-link
-                to="/about"
-                class="link-router"
-                active-class="active"
-              >
+              <router-link to="/about" class="link-router">
                 关于我们
               </router-link></el-menu-item
             >
@@ -34,7 +34,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    back() {
+      this.$router.back();
+    },
+    forward() {
+      this.$router.forward();
+    },
+  },
+};
 </script>
 
 <style >

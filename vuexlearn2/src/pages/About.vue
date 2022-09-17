@@ -13,7 +13,11 @@
         公司人员
       </router-link></el-tag
     >
-    <div><router-view></router-view></div>
+    <div>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
   </div>
 </template>
 

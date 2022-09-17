@@ -3,7 +3,7 @@
     <li v-for="st in staffList" :key="st.id">
       <router-link
         :to="{
-          name: 'StaffDetail',
+          name: 'staffDetail',
           params: {
             id: st.id,
             name: st.name,

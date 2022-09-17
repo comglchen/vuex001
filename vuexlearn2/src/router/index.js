@@ -9,20 +9,24 @@ import StaffDetail from '../pages/StaffDetail'
 export default new VueRouter({
     routes: [
         {
+            name: 'about',
             path: '/about',
             component: About,
             children: [{
+                name: 'department',
                 path: 'department',
                 component: Department,
                 children: [{
+                    name: 'departmentDetail',
                     path: 'departmentDetail',
                     component: DepartmentDetail
                 }]
             }, {
+                name: 'staff',
                 path: 'staff',
                 component: Staff,
                 children: [{
-                    name: 'StaffDetail',
+                    name: 'staffDetail',
                     path: 'staffDetail/:id/:name/:addr',
                     component: StaffDetail,
                     // props: {
@@ -34,6 +38,7 @@ export default new VueRouter({
             ]
         },
         {
+            name: 'home',
             path: '/home',
             component: Home
         }

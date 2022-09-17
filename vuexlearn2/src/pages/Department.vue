@@ -8,6 +8,8 @@
     <div class="router-v">
       <router-view></router-view>
     </div>
+    <input type="text" placeholder="请输入可以缓存的内容" />
+    <button @click="pushShow()">退回到staff</button>
   </div>
 </template>
 
@@ -21,6 +23,13 @@ export default {
         { id: "003", dep: "法务部", job: "管理法务工作" },
       ],
     };
+  },
+  methods: {
+    pushShow() {
+      this.$router.push({
+        name: "staff",
+      });
+    },
   },
 };
 </script>
