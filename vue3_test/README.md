@@ -1,4 +1,4 @@
-# vuexlearn1
+# vue3_test
 
 ## Project setup
 ```
