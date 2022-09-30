@@ -1,12 +1,20 @@
-<template></template>
+<template>
+  x坐标为：{{ point.x }} y坐标为：{{ point.y }}
+  <hr />
+  <HelloWorld></HelloWorld>
+</template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import { h } from "vue";
+import usePoint from "./usePoint/getPoint";
+
 export default {
   name: "App",
+  components: { HelloWorld, HelloWorld },
   setup() {
-    return () => h("h1", "你好呀！");
+    let point = usePoint();
+    console.log(point);
+    return { point };
   },
 };
 </script>
