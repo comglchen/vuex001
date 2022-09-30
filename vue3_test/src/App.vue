@@ -6,7 +6,7 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import usePoint from "./usePoint/getPoint";
+import usePoint from "./hooks/getPoint";
 
 export default {
   name: "App",

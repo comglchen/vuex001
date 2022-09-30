@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import usePoint from "../usePoint/getPoint";
+import usePoint from "../hooks/getPoint";
 export default {
   setup() {
     let point = usePoint();
